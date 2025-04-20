@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "ddd68e1c-3892-4c43-a67d-d97275a8992b",
+		"name": "Login Module  Tests-Api PM_AutoScript",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42343777"
+	},
+	"item": [
+		{
+			"name": "TC001 - Valid Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+							"pm.test(\"Access token is present\", function () { var jsonData = pm.response.json(); pm.expect(jsonData).to.have.property(\"access_token\"); });"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"john@mail.com\",\n\t\"password\": \"changeme\"\n}"
+				},
+				"url": {
+					"raw": "https://api.escuelajs.co/api/v1/auth/login",
+					"protocol": "https",
+					"host": [
+						"api",
+						"escuelajs",
+						"co"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC002 - Invalid Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () { pm.response.to.have.status(401); });\r",
+							"pm.test(\"Response message indicates unauthorized\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.include(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"joh@mail.com\",\n\t\"password\": \"changeme\"\n}"
+				},
+				"url": {
+					"raw": "https://api.escuelajs.co/api/v1/auth/login",
+					"protocol": "https",
+					"host": [
+						"api",
+						"escuelajs",
+						"co"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC003 - Invalid Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () { pm.response.to.have.status(401); });\r",
+							"pm.test(\"Error message for empty credentials\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.include(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"john@mail.com\",\n\t\"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "https://api.escuelajs.co/api/v1/auth/login",
+					"protocol": "https",
+					"host": [
+						"api",
+						"escuelajs",
+						"co"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC004 - Empty Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });\r",
+							"pm.test(\"Error message for empty credentials\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.include(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"\",\n\t\"password\": \"changeme\"\n}"
+				},
+				"url": {
+					"raw": "https://api.escuelajs.co/api/v1/auth/login",
+					"protocol": "https",
+					"host": [
+						"api",
+						"escuelajs",
+						"co"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC005 - Empty Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });\r",
+							"pm.test(\"Error message for empty credentials\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.include(\"Unauthorized\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"john@mail.com\",\n\t\"password\": \"\"\n}"
+				},
+				"url": {
+					"raw": "https://api.escuelajs.co/api/v1/auth/login",
+					"protocol": "https",
+					"host": [
+						"api",
+						"escuelajs",
+						"co"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC006 - Empty Email and Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });\r",
+							"pm.test(\"Error message for missing fields\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.message).to.be.a(\"string\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"\",\n  \"password\": \"\"\n}"
+				},
+				"url": {
+					"raw": "https://api.escuelajs.co/api/v1/auth/login",
+					"protocol": "https",
+					"host": [
+						"api",
+						"escuelajs",
+						"co"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
