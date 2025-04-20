@@ -26,12 +26,12 @@ Our team conducted **end-to-end testing** (Manual, API, and Automation) for the 
 #### 🔹 `main` branch
 Contains general project documentation and summaries.
 
-#### 🐞 `BugReports&TestCases`
+
+#### 🐞 `BugReports&TestCases`  
 Includes:
-- ✅ Manual Test Cases
-- ✅ Test Scenarios
-- ❌ Bug Reports  
-_All maintained in Google Sheets._
+- ✅ [Manual Test Cases, Test Scenarios (Google Sheet)](https://docs.google.com/spreadsheets/d/1GIx1EMnmM7PkqJQRKwS-IF68J1EAlqWp4uMujbS1vkM/edit?usp=sharing)  
+- 📂 A dedicated **`BugReports` folder** will be uploaded in this branch, containing detailed reports for all discovered issues.
+
 
 #### 🤖 `Automation` branch
 Includes:
