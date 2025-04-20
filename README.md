@@ -90,22 +90,3 @@ Includes:
 
 ---
 
-### 📄 Project Instructions & Guidelines
-This project follows the guidelines provided by the **Digital Egypt Pioneers** program.  
-Instructions and evaluation criteria are included in the `Instructions.pdf` file.
-
----
-
-### 🚀 How to Use This Repo
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Khaled-Gawad/GHR2_SWD6_G1_1.git
-   ```
-2. Switch to your desired branch:
-   ```bash
-   git checkout Automation
-   ```
-
----
-
-Would you like me to generate the actual `README.md` file so you can copy it directly to each branch, or do you want a different structure for each one?
