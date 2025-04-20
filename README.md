@@ -102,13 +102,5 @@ Includes:
 
 ---
 
-### ⚙️ Automation Tools Used
 
-- **Selenium WebDriver** – For browser-based test automation  
-- **Java** – Primary programming language for automation scripts  
-- **IntelliJ IDEA** – Development environment for script writing and execution  
-- **Maven** – Project and dependency management tool  
-- **ChromeDriver** – For executing automated tests in Chrome browser
-
----
 
