@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "6291614e-23ce-4e83-b461-95453857fc7b",
+		"name": "Platzi Fake Store API_UsersReq_Scripts_Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42344053",
+		"_collection_link": "https://myteam-0852.postman.co/workspace/Platzi-Fake-Store-API_Postman_C~15d8db19-47b2-49e9-9142-897675e1828e/collection/42344053-6291614e-23ce-4e83-b461-95453857fc7b?action=share&source=collection_link&creator=42344053"
+	},
+	"item": [
+		{
+			"name": "Rest API",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "getAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"// Is Status code == 200\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/users",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getOne",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"// Get the status ID from the environment variables\r",
+											"const statusId = pm.environment.get('ID');\r",
+											"\r",
+											"// Check if the status ID is 999, then expect the status code to be 404\r",
+											"if (statusId === '999') {\r",
+											"    pm.test(\"Status code is 400\", function () {\r",
+											"        pm.response.to.have.status(400);\r",
+											"    });\r",
+											"}\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/users/{{ID}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"{{ID}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"name\": \"Nicolas\",\r\n\t\"email\": \"nico@gmail.com\",\r\n\t\"password\": \"1234\",\r\n    \"avatar\": \"https://api.lorem.space/image/face?w=640&h=480\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/users/",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \r\n        \"name\": \"okey\",\r\n        \"role\": \"admin\"\r\n        \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/users/4",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "isAvailable",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": 4,\r\n        \"email\": \"okeyto@gmail.com\",\r\n        \"password\": \"talha123\",\r\n        \"name\": \"okey\",\r\n        \"role\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/users/is-available",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"is-available"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
