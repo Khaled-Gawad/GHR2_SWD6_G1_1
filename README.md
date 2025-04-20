@@ -3,11 +3,11 @@
 
 ## 📦 GHR2_SWD6_G1_1 - E-Commerce Software Testing Project
 
-Welcome to the official repository for our **graduation project** as part of the Digital Egypt Pioneers initiative.  
-Our team conducted **end-to-end testing** (Manual, API, and Automation) for the following:
+Welcome to the official repository for our **graduation project** as part of the **Digital Egypt Pioneers** initiative.  
+Our team conducted **end-to-end software testing** across manual, API, and automation levels for:
 
-- 🛍️ [Demo Web Shop](https://demowebshop.tricentis.com/) – Manual + Automation testing
-- 🧪 [Fake Store API](https://fakeapi.platzi.com/en) – API Testing with Postman
+- 🛍️ [Demo Web Shop](https://demowebshop.tricentis.com/) – Manual & Automation Testing  
+- 🧪 [Fake Store API](https://fakeapi.platzi.com/en) – API Testing using Postman
 
 ---
 
@@ -23,31 +23,43 @@ Our team conducted **end-to-end testing** (Manual, API, and Automation) for the 
 
 ### 📁 Branches Overview
 
-#### 🔹 `main` branch
-Contains general project documentation and summaries.
-
-
-#### 🐞 `BugReports&TestCases` branch  
-Includes:
-- ✅ [Manual Test Cases, Test Scenarios (Google Sheet)](https://docs.google.com/spreadsheets/d/1GIx1EMnmM7PkqJQRKwS-IF68J1EAlqWp4uMujbS1vkM/edit?usp=sharing)  
-- 📂 A dedicated **`BugReports` folder** will be uploaded in this branch, containing detailed reports for all discovered issues.
-
-
-#### 🤖 `Automation` branch
-Includes:
-- ✅ Selenium WebDriver scripts (Java-based)
-- ✅ Edge case automation
-- ✅ Modular test scripts for each feature
-
-#### 🔌 `Api` branch
-Includes:
-- ✅ Postman collection & environment
-- ✅ Tested endpoints for Fake Store API (`https://fakeapi.platzi.com/en`)
-- ✅ CRUD operations for Users, Products, Categories, Files, and Auth
+#### 🔹 `main` branch  
+Contains general documentation and summaries of all project modules and deliverables.
 
 ---
 
-### 🧪 Testing Modules & Responsibilities
+#### 🐞 [`BugReports&TestCases`](https://github.com/Khaled-Gawad/GHR2_SWD6_G1_1/tree/BugReports&TestCases)  
+Includes:
+- ✅ [Manual Test Cases, Test Scenarios (Google Sheet)](https://docs.google.com/spreadsheets/d/1GIx1EMnmM7PkqJQRKwS-IF68J1EAlqWp4uMujbS1vkM/edit?usp=sharing)  
+- 📥 **E-Commerce Website Test.xlsx**
+- 📂 **BugReports Folder** – Contains detailed bug reports for each module  
+  🔗 [Bug Reports Google Drive Folder](https://drive.google.com/drive/folders/15AyMQbblelRYDf5ioy7L5WhxfxqJSQ5N?usp=drive_link)
+
+---
+
+#### 🔌 [`Api`](https://github.com/Khaled-Gawad/GHR2_SWD6_G1_1/tree/Api)  
+Includes:
+- ✅ Postman collections with test scripts
+- ✅ API test cases for:
+  - Users (CRUD)
+  - Auth (Login/Profile)
+  - Products, Categories
+  - File upload/download
+- 📎 [API Reference – Google Sheet Tab](https://docs.google.com/spreadsheets/d/1GIx1EMnmM7PkqJQRKwS-IF68J1EAlqWp4uMujbS1vkM/edit?gid=1734676715#gid=1734676715)
+
+---
+
+#### 🤖 [`Automation`](https://github.com/Khaled-Gawad/GHR2_SWD6_G1_1/tree/Automation)  
+Includes:
+- ✅ Selenium WebDriver scripts using **Java**
+- ✅ Automation of key user flows and edge cases
+- ✅ Developed and run via **IntelliJ IDEA**
+- ✅ Dependency management with **Maven**
+- ✅ Executed on **ChromeDriver**
+
+---
+
+### 🧪 Testing Coverage – Manual Modules
 
 | Module                               | Tester Name | Status |
 |--------------------------------------|-------------|--------|
@@ -87,6 +99,16 @@ Includes:
 | Auth (Login/Profile)                 | Rehab       |
 | Products / Categories                | Eman        |
 | Files (Upload & File)                | Mohamad     |
+
+---
+
+### ⚙️ Automation Tools Used
+
+- **Selenium WebDriver** – For browser-based test automation  
+- **Java** – Primary programming language for automation scripts  
+- **IntelliJ IDEA** – Development environment for script writing and execution  
+- **Maven** – Project and dependency management tool  
+- **ChromeDriver** – For executing automated tests in Chrome browser
 
 ---
 
